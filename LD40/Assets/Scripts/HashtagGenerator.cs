@@ -42,26 +42,39 @@ public class HashtagGenerator : MonoBehaviour {
         while (true)
         {
             yield return new WaitForSeconds(waitTime);
-            CurrentHashtagMood = Random.Range(0, 4);
-            if(CurrentHashtagMood == 0)
+            if (TheGameLogic.ActionSelected)
             {
-                NewHashtag = HappyHashtag[Random.Range(0, HappyHashtag.Length + 1)];
+                TheGameLogic.ActionSelected = false;
             }
-            else if(CurrentHashtagMood == 1)
+
+            if (TheGameLogic.HashtagActive)
             {
-                NewHashtag = SadHashtag[Random.Range(0, SadHashtag.Length + 1)];
+                TheGameLogic.HashtagActive = false;
             }
-            else if (CurrentHashtagMood == 2)
+            else
             {
-                NewHashtag = SillyHashtag[Random.Range(0, SillyHashtag.Length + 1)];
+                CurrentHashtagMood = Random.Range(0, 4);
+                Debug.Log(CurrentHashtagMood);
+                if (CurrentHashtagMood == 0)
+                {
+                    NewHashtag = HappyHashtag[Random.Range(0, HappyHashtag.Length)];
+                }
+                else if (CurrentHashtagMood == 1)
+                {
+                    NewHashtag = SadHashtag[Random.Range(0, SadHashtag.Length)];
+                }
+                else if (CurrentHashtagMood == 2)
+                {
+                    NewHashtag = SillyHashtag[Random.Range(0, SillyHashtag.Length)];
+                }
+                else if (CurrentHashtagMood == 3)
+                {
+                    NewHashtag = InspirationalHashtag[Random.Range(0, InspirationalHashtag.Length)];
+                }
+
+                TheGameLogic.HashtagActive = true;
+                hashtagText.text = NewHashtag;
             }
-            else if (CurrentHashtagMood == 3)
-            {
-                NewHashtag = InspirationalHashtag[Random.Range(0, InspirationalHashtag.Length + 1)];
-            } 
-            
-            TheGameLogic.HashtagActive = true;
-            hashtagText.text = NewHashtag;
         }
     }
 }

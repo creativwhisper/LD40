@@ -6,19 +6,24 @@ using UnityEngine.UI;
 public class GameLogic : MonoBehaviour {
 
     public bool PlayerHasReactedThisTurn = false;
+    public bool ActionSelected = false;
     public bool ActionProcessing = false;
     public bool HashtagActive = false;
     public int TurnNumber = 1;
+    public GameObject moodReactionCanvas;
+    public float TimeBetweenTurns;
 
     Slider progressBar;
     GameState gState;
     int newMoneyDelta = 100;
     int followersDelta;
+    
 
     private void Awake()
     {
         //progressBar = GameObject.Find("ProgressBar").GetComponent<Slider>();
         gState = GameObject.Find("GAMESTATE").GetComponent<GameState>();
+        
     }
 
     // Use this for initialization
@@ -29,13 +34,20 @@ public class GameLogic : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+        if (!moodReactionCanvas.activeSelf && ActionSelected)
+        {
+            moodReactionCanvas.SetActive(true);
+        } else if (moodReactionCanvas.activeSelf && !ActionSelected)
+        {
+            moodReactionCanvas.SetActive(false);
+        }
 	}
 
     IEnumerator TimeUpdate()
     {
         while (true)
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(TimeBetweenTurns);
             TurnNumber++;
             UpdateCounters();
         }
@@ -43,38 +55,66 @@ public class GameLogic : MonoBehaviour {
 
     void UpdateCounters()
     {
+        PlayerHasReactedThisTurn = false;
         gState.Money -= newMoneyDelta;
         newMoneyDelta += 10;
-        if (PlayerHasReactedThisTurn)
+        if (!PlayerHasReactedThisTurn)
         {
-
-        } else
-        {
+                    
             gState.Followers = (gState.Followers / 2) + 1;
         }
+        else
+        {
+            gState.Followers += ((gState.Followers * 5) / 100) + 1;
+        }
 
-        Debug.Log("Turn Processed");
-        Debug.Log(TurnNumber);
+        // Debug.Log("Turn Processed");
+        // Debug.Log(TurnNumber);
     }
 
     public void Photo()
     {
-        HashtagActive = false;
+        ActionSelected = true;
+        
     }
 
     public void Video()
     {
-        HashtagActive = false;
+        ActionSelected = true;
+        
     }
 
     public void Tweet()
     {
-        HashtagActive = false;
+        ActionSelected = true;
+        
     }
 
     public void LongPost()
     {
+        ActionSelected = true;
+        
+    }
+
+    public void CorrectMood()
+    {
+        Debug.Log("Correct!");
         HashtagActive = false;
+        ActionSelected = false;
+        gState.Followers += ((gState.Followers * 10) / 100) + 1;
+    }
+
+    public void IncorrectMood()
+    {
+        Debug.Log("IncorrectMood!");
+        HashtagActive = false;
+        ActionSelected = false;
+        gState.Followers -= ((gState.Followers * 10) / 100) + 1;
+    }
+
+    public void FakeMood()
+    {
+
     }
 }
 
