@@ -57,24 +57,24 @@ public class GameLogic : MonoBehaviour {
         Debug.Log(TurnNumber);
     }
 
-    void Photo()
+    public void Photo()
     {
-
+        HashtagActive = false;
     }
 
-    void Video()
+    public void Video()
     {
-
+        HashtagActive = false;
     }
 
-    void Tweet()
+    public void Tweet()
     {
-
+        HashtagActive = false;
     }
 
-    void LongPost()
+    public void LongPost()
     {
-
+        HashtagActive = false;
     }
 }
 

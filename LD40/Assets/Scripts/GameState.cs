@@ -42,12 +42,12 @@ public class GameState : MonoBehaviour {
 
     void YouKillYourself()
     {
-        Debug.Log("You Killed Yourself due to stress");
+        //Debug.Log("You Killed Yourself due to stress");
     }
 
     void YouStarveToDeath()
     {
-        Debug.Log("You are broke and die from inanition");
+        //Debug.Log("You are broke and die from inanition");
     }
 }
 
