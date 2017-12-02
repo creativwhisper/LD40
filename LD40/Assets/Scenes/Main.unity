@@ -970,7 +970,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &694952868
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1320,7 +1320,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &797101321
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1510,7 +1510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &819318709
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1922,7 +1922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &992333577
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2668,7 +2668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1564477119
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2728,7 +2728,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1165838316}
-        m_MethodName: Inspirational
+        m_MethodName: PersonalPost
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3254,7 +3254,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2089703847
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3314,7 +3314,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1165838316}
-        m_MethodName: Inspirational
+        m_MethodName: FakeMood
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

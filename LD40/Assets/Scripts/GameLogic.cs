@@ -112,7 +112,7 @@ public class GameLogic : MonoBehaviour {
         gState.Followers -= ((gState.Followers * 10) / 100) + 1;
     }
 
-    public void FakeMood()
+    /*public void FakeMood()
     {
         gState.Health -= 10;
         
@@ -121,19 +121,22 @@ public class GameLogic : MonoBehaviour {
     public void PersonalPost()
     {
         gState.Health -= 15;
-        StartCoroutine(MultipliyingFollowers());
+        // StartCoroutine(MultipliyingFollowers());
+        gState.Followers += (gState.Followers * 50) / 100;
     }
 
     IEnumerator MultipliyingFollowers()
     {
+        
         gState.Followers += (gState.Followers * 50) / 100;
         for (int i = 0; i < 4; i++)
         {
-            gState.Followers += (gState.Followers * 50) / 100;
             yield return new WaitForSeconds(1f);
+            gState.Followers += (gState.Followers * 50) / 100;
+            
         }
         yield return null;
             
-    }
+    }*/
 }
 
