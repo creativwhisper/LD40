@@ -35,7 +35,14 @@ public class GameState : MonoBehaviour {
             YouStarveToDeath();
         } 
 
-        healthText.text = "Mental Health: " + Health;
+        healthText.text = "Mental Health: " + Health + " / 100";
+        if (Health < 50 && Health > 20)
+        {
+            healthText.color = Color.yellow;
+        } else if (Health < 20)
+        {
+            healthText.color = Color.red;
+        }
         followersText.text = "Followers: " + Followers;
         moneyText.text = "Money: " + Money;
     }

@@ -114,7 +114,26 @@ public class GameLogic : MonoBehaviour {
 
     public void FakeMood()
     {
+        gState.Health -= 10;
+        
+    }
 
+    public void PersonalPost()
+    {
+        gState.Health -= 15;
+        StartCoroutine(MultipliyingFollowers());
+    }
+
+    IEnumerator MultipliyingFollowers()
+    {
+        gState.Followers += (gState.Followers * 50) / 100;
+        for (int i = 0; i < 4; i++)
+        {
+            gState.Followers += (gState.Followers * 50) / 100;
+            yield return new WaitForSeconds(1f);
+        }
+        yield return null;
+            
     }
 }
 

@@ -23,9 +23,11 @@ public class HashtagReaction : MonoBehaviour {
         if(hGenerator.CurrentHashtagMood == 0)
         {
             TheGameLogic.CorrectMood();
+            TheGameLogic.PlayerHasReactedThisTurn = true;
         } else
         {
             TheGameLogic.IncorrectMood();
+            TheGameLogic.PlayerHasReactedThisTurn = true;
         }
     }
 
@@ -34,10 +36,12 @@ public class HashtagReaction : MonoBehaviour {
         if (hGenerator.CurrentHashtagMood == 1)
         {
             TheGameLogic.CorrectMood();
+            TheGameLogic.PlayerHasReactedThisTurn = true;
         }
         else
         {
             TheGameLogic.IncorrectMood();
+            TheGameLogic.PlayerHasReactedThisTurn = true;
         }
     }
 
@@ -60,10 +64,12 @@ public class HashtagReaction : MonoBehaviour {
         if (hGenerator.CurrentHashtagMood == 3)
         {
             TheGameLogic.CorrectMood();
+            TheGameLogic.PlayerHasReactedThisTurn = true;
         }
         else
         {
             TheGameLogic.IncorrectMood();
+            TheGameLogic.PlayerHasReactedThisTurn = true;
         }
     }
 }
