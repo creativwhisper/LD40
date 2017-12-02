@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameState : MonoBehaviour {
 
     public int Health = 100;
-    public int Followers = 1;
+    public int Followers = 100;
     public int Money = 1000;
 
     // Keep them serialized for debugging, hide them on final project
@@ -33,10 +33,11 @@ public class GameState : MonoBehaviour {
         } else if (Money <= 0)
         {
             YouStarveToDeath();
-        } else
-        {
-            return;
-        }
+        } 
+
+        healthText.text = "Mental Health: " + Health;
+        followersText.text = "Followers: " + Followers;
+        moneyText.text = "Money: " + Money;
     }
 
     void YouKillYourself()

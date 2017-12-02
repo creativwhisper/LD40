@@ -5,16 +5,22 @@ using UnityEngine.UI;
 
 public class GameLogic : MonoBehaviour {
 
-    public bool ActionProcessing;
-    public bool HashtagActive;
+    public bool PlayerHasReactedThisTurn = false;
+    public bool ActionProcessing = false;
+    public bool HashtagActive = false;
+    public int TurnNumber = 1;
 
     Slider progressBar;
     GameState gState;
+    int newMoneyDelta = 100;
+    int followersDelta;
 
     private void Awake()
     {
-        progressBar = GameObject.Find("ProgressBar").GetComponent<Slider>();
+        //progressBar = GameObject.Find("ProgressBar").GetComponent<Slider>();
+        gState = GameObject.Find("GAMESTATE").GetComponent<GameState>();
     }
+
     // Use this for initialization
     void Start () {
         StartCoroutine(TimeUpdate());
@@ -29,14 +35,26 @@ public class GameLogic : MonoBehaviour {
     {
         while (true)
         {
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(2f);
+            TurnNumber++;
             UpdateCounters();
         }
     }
 
     void UpdateCounters()
     {
+        gState.Money -= newMoneyDelta;
+        newMoneyDelta += 10;
+        if (PlayerHasReactedThisTurn)
+        {
+
+        } else
+        {
+            gState.Followers = (gState.Followers / 2) + 1;
+        }
+
         Debug.Log("Turn Processed");
+        Debug.Log(TurnNumber);
     }
 
     void Photo()
