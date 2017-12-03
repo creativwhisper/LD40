@@ -613,7 +613,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: A Needy Media
+  m_Text: Unsocial Media
 --- !u!222 &725296016
 CanvasRenderer:
   m_ObjectHideFlags: 0

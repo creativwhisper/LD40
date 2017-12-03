@@ -4825,7 +4825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 100
   Followers: 100
-  Money: 100
+  Money: 500
   RedEye: {fileID: 0}
   DepressionGO: {fileID: 90066927}
   BrokeGO: {fileID: 1304559326}
