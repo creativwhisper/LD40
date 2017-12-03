@@ -218,10 +218,12 @@ public class GameLogic : MonoBehaviour {
 
     public void FakeMood()
     {
-        HashtagActive = false;
-        ActionSelected = false;
         gState.Health -= 10;
         gState.Followers += ((gState.Followers * 10) / 100) + 1;
+
+        HashtagActive = false;
+        ActionSelected = false;
+        
         if (gState.Health < 50 || gState.Followers > 100000)
         {
             Reaction1.text = VeryPossitivePhrases[Random.Range(0, 15)];

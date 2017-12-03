@@ -24,7 +24,7 @@ public class GameState : MonoBehaviour {
         healthText = GameObject.Find("Health").GetComponent<Text>();
         followersText = GameObject.Find("Followers").GetComponent<Text>();
         moneyText = GameObject.Find("Money").GetComponent<Text>();
-        RedEye = GameObject.Find("Red Eye").GetComponent<SpriteRenderer>();
+        //RedEye = GameObject.Find("Red Eye").GetComponent<SpriteRenderer>();
         
     }
 
