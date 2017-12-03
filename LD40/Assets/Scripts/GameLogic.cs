@@ -184,6 +184,7 @@ public class GameLogic : MonoBehaviour {
         //Debug.Log("IncorrectMood!");
         HashtagActive = false;
         ActionSelected = false;
+        gState.Health -= 1;
         if (gState.Followers <= 1000)
         {
             gState.Followers -= ((gState.Followers * 10) / 100) + 1;
@@ -215,76 +216,6 @@ public class GameLogic : MonoBehaviour {
             Reaction5.text = NegativePhrases[Random.Range(0, 15)];
         }
     }
-
-    public void FakeMood()
-    {
-        gState.Health -= 10;
-        gState.Followers += ((gState.Followers * 10) / 100) + 1;
-
-        HashtagActive = false;
-        ActionSelected = false;
         
-        if (gState.Health < 50 || gState.Followers > 100000)
-        {
-            Reaction1.text = VeryPossitivePhrases[Random.Range(0, 15)];
-            Reaction2.text = VeryPossitivePhrases[Random.Range(0, 15)];
-            Reaction3.text = VeryPossitivePhrases[Random.Range(0, 15)];
-            Reaction4.text = VeryPossitivePhrases[Random.Range(0, 15)];
-            Reaction5.text = VeryPossitivePhrases[Random.Range(0, 15)];
-        }
-        else
-        {
-            Reaction1.text = PossitivePhrases[Random.Range(0, 15)];
-            Reaction2.text = PossitivePhrases[Random.Range(0, 15)];
-            Reaction3.text = PossitivePhrases[Random.Range(0, 15)];
-            Reaction4.text = PossitivePhrases[Random.Range(0, 15)];
-            Reaction5.text = PossitivePhrases[Random.Range(0, 15)];
-        }
-        thumbUpParticle.Play();
-    }
-
-    public void PersonalPost()
-    {
-        thumbUpParticle.Play();
-        HashtagActive = false;
-        ActionSelected = false;
-        gState.Health -= 15;
-        // StartCoroutine(MultipliyingFollowers());
-        if (gState.Followers < 1000)
-        {
-            gState.Followers += (gState.Followers * 50) / 100;
-            gState.Followers += (gState.Followers * 50) / 100;
-            gState.Followers += (gState.Followers * 50) / 100;
-        }
-        else if (gState.Followers > 1001 && gState.Followers < 100000)
-        {
-            gState.Followers += (gState.Followers * 40) / 100;
-            gState.Followers += (gState.Followers * 30) / 100;
-            gState.Followers += (gState.Followers * 20) / 100;
-        }
-        else
-        {
-            gState.Followers += (gState.Followers * 30) / 100;
-            gState.Followers += (gState.Followers * 20) / 100;           
-        }
-        if (gState.Health < 50 || gState.Followers > 100000)
-        {
-            Reaction1.text = VeryPossitivePhrases[Random.Range(0, 15)];
-            Reaction2.text = VeryPossitivePhrases[Random.Range(0, 15)];
-            Reaction3.text = VeryPossitivePhrases[Random.Range(0, 15)];
-            Reaction4.text = VeryPossitivePhrases[Random.Range(0, 15)];
-            Reaction5.text = VeryPossitivePhrases[Random.Range(0, 15)];
-        }
-        else
-        {
-            Reaction1.text = PossitivePhrases[Random.Range(0, 15)];
-            Reaction2.text = PossitivePhrases[Random.Range(0, 15)];
-            Reaction3.text = PossitivePhrases[Random.Range(0, 15)];
-            Reaction4.text = PossitivePhrases[Random.Range(0, 15)];
-            Reaction5.text = PossitivePhrases[Random.Range(0, 15)];
-        }
-        
-    }
-    
 }
 

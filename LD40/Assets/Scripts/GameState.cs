@@ -10,6 +10,10 @@ public class GameState : MonoBehaviour {
     public int Money = 1000;
     public SpriteRenderer RedEye;
     Color color;
+    public GameObject DepressionGO;
+    public GameObject BrokeGO;
+    public Text DepresionText;
+    public Text BrokeText;
 
     // Keep them serialized for debugging, hide them on final project
     [SerializeField]
@@ -18,12 +22,16 @@ public class GameState : MonoBehaviour {
     Text followersText;
     [SerializeField]
     Text moneyText;
+    GamePauseAndExit pauseAndExit;
+    GameLogic gLogic;
 
     private void Awake()
     {
         healthText = GameObject.Find("Health").GetComponent<Text>();
         followersText = GameObject.Find("Followers").GetComponent<Text>();
         moneyText = GameObject.Find("Money").GetComponent<Text>();
+        pauseAndExit = this.GetComponent<GamePauseAndExit>();
+        gLogic = GameObject.Find("GAMELOGIC").GetComponent<GameLogic>();
         //RedEye = GameObject.Find("Red Eye").GetComponent<SpriteRenderer>();
         
     }
@@ -55,13 +63,22 @@ public class GameState : MonoBehaviour {
         moneyText.text = "Money: " + Money;
     }
 
-    void YouKillYourself()
+    void YouStarveToDeath()
     {
+        Time.timeScale = 0;
+        pauseAndExit.isGamePaused = true;
+        BrokeGO.SetActive(true);
+        BrokeText.text = "Your career elapsed " + gLogic.TurnNumber + " days, you had " + Followers + " in the end.";
+
         //Debug.Log("You Killed Yourself due to stress");
     }
 
-    void YouStarveToDeath()
+    void YouKillYourself()
     {
+        Time.timeScale = 0;
+        pauseAndExit.isGamePaused = true;
+        DepressionGO.SetActive(true);
+        DepresionText.text = "Your career elapsed " + gLogic.TurnNumber + " days, you had " + Followers + " followers in the end.";
         //Debug.Log("You are broke and die from inanition");
     }
 }

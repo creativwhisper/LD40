@@ -77,24 +77,36 @@ public class HashtagReaction : MonoBehaviour {
 
     public void FakeMood()
     {
-        gameState.Health -= 5;
+        gameState.Health -= 10;
+        gameState.Followers += ((gameState.Followers * 10) / 100) + 1;
         TheGameLogic.PlayerHasReactedThisTurn = true;
+        TheGameLogic.CorrectMood();
     }
 
     public void PersonalPost()
     {
         gameState.Health -= 15;
-        gameState.Followers += (gameState.Followers * 50) / 100;
-        StartCoroutine(MultipliyingFollowers());
-    }
-
-    IEnumerator MultipliyingFollowers()
-    {
-        for (int i = 0; i < 4; i++)
+        if (gameState.Followers < 1000)
         {
-            yield return new WaitForSeconds(1f);
+            gameState.Followers += (gameState.Followers * 50) / 100;
+            gameState.Followers += (gameState.Followers * 50) / 100;
             gameState.Followers += (gameState.Followers * 50) / 100;
         }
+        else if (gameState.Followers > 1001 && gameState.Followers < 100000)
+        {
+            gameState.Followers += (gameState.Followers * 40) / 100;
+            gameState.Followers += (gameState.Followers * 30) / 100;
+            gameState.Followers += (gameState.Followers * 20) / 100;
+        }
+        else
+        {
+            gameState.Followers += (gameState.Followers * 30) / 100;
+            gameState.Followers += (gameState.Followers * 20) / 100;
+        }
+        TheGameLogic.PlayerHasReactedThisTurn = true;
+        TheGameLogic.CorrectMood();
     }
+
+    
 }
 
