@@ -12,7 +12,12 @@ public class GameLogic : MonoBehaviour {
     public int TurnNumber = 1;
     public GameObject moodReactionCanvas;
     public float TimeBetweenTurns;
+    public int[] LastActionUsed;
 
+    [SerializeField]
+    ParticleSystem thumbUpParticle;
+    [SerializeField]
+    ParticleSystem thumbDownParticle;
     Slider progressBar;
     GameState gState;
     int newMoneyDelta = 100;
@@ -102,6 +107,7 @@ public class GameLogic : MonoBehaviour {
         HashtagActive = false;
         ActionSelected = false;
         gState.Followers += ((gState.Followers * 10) / 100) + 1;
+        thumbUpParticle.Play();
     }
 
     public void IncorrectMood()
@@ -110,6 +116,7 @@ public class GameLogic : MonoBehaviour {
         HashtagActive = false;
         ActionSelected = false;
         gState.Followers -= ((gState.Followers * 10) / 100) + 1;
+        thumbDownParticle.Play();
     }
 
     /*public void FakeMood()
