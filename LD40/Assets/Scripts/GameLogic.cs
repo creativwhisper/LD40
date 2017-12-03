@@ -13,6 +13,10 @@ public class GameLogic : MonoBehaviour {
     public GameObject moodReactionCanvas;
     public float TimeBetweenTurns;
     public int[] LastActionUsed;
+    public string[] PossitivePhrases;
+    public string[] NegativePhrases;
+    public string[] VeryPossitivePhrases;
+    public string[] VeryNegativePhrases;
 
     [SerializeField]
     ParticleSystem thumbUpParticle;
