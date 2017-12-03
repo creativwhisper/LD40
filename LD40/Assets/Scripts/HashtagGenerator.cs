@@ -14,10 +14,11 @@ public class HashtagGenerator : MonoBehaviour {
     public string[] InspirationalHashtag;
     public string NewHashtag;
     public int CurrentHashtagMood;
+    public float waitTime;
 
     Text hashtagText;
     [SerializeField]
-    float waitTime;
+    
 
 	// Use this for initialization
 	void Start () {

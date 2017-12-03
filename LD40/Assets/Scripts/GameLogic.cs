@@ -34,15 +34,16 @@ public class GameLogic : MonoBehaviour {
     ParticleSystem thumbDownParticle;
     Slider progressBar;
     GameState gState;
-    int newMoneyDelta = 100;
+    int newMoneyDelta = 50;
     int followersDelta;
+    HashtagGenerator hGenerator;
     
 
     private void Awake()
     {
         //progressBar = GameObject.Find("ProgressBar").GetComponent<Slider>();
         gState = GameObject.Find("GAMESTATE").GetComponent<GameState>();
-        
+        hGenerator = GameObject.Find("HASHTAGGENERATOR").GetComponent<HashtagGenerator>();
     }
 
     // Use this for initialization
@@ -76,9 +77,26 @@ public class GameLogic : MonoBehaviour {
     {
         
         gState.Money -= newMoneyDelta;
+        if(gState.Followers > 1000 && gState.Followers < 10000)
+        {
+            hGenerator.waitTime -= 0.1f;
+            if(hGenerator.waitTime < 1.0f)
+            {
+                hGenerator.waitTime = 1.0f;
+            }
+        } else if (gState.Followers >= 10000)
+        {
+            hGenerator.waitTime -= 0.2f;
+            if (hGenerator.waitTime < 1.0f)
+            {
+                hGenerator.waitTime = 1.0f;
+            }
+        } 
+        
+
         if (TurnNumber < 10)
         {
-            newMoneyDelta += 10;
+            newMoneyDelta += 5;
         } else if (TurnNumber >= 10 && TurnNumber < 30)
         {
             newMoneyDelta += 30;
@@ -164,10 +182,15 @@ public class GameLogic : MonoBehaviour {
         if (gState.Health < 50 || gState.Followers > 100000)
         {
             Reaction1.text = VeryPossitivePhrases[Random.Range(0, 15)];
+            Reaction1.color = Color.red;
             Reaction2.text = VeryPossitivePhrases[Random.Range(0, 15)];
+            Reaction2.color = Color.red;
             Reaction3.text = VeryPossitivePhrases[Random.Range(0, 15)];
+            Reaction3.color = Color.red;
             Reaction4.text = VeryPossitivePhrases[Random.Range(0, 15)];
+            Reaction4.color = Color.red;
             Reaction5.text = VeryPossitivePhrases[Random.Range(0, 15)];
+            Reaction5.color = Color.red;
         }
         else
         {
@@ -202,10 +225,15 @@ public class GameLogic : MonoBehaviour {
         if (gState.Health < 50 || gState.Followers > 100000)
         {
             Reaction1.text = VeryNegativePhrases[Random.Range(0, 15)];
+            Reaction1.color = Color.red;
             Reaction2.text = VeryNegativePhrases[Random.Range(0, 15)];
+            Reaction2.color = Color.red;
             Reaction3.text = VeryNegativePhrases[Random.Range(0, 15)];
+            Reaction3.color = Color.red;
             Reaction4.text = VeryNegativePhrases[Random.Range(0, 15)];
+            Reaction4.color = Color.red;
             Reaction5.text = VeryNegativePhrases[Random.Range(0, 15)];
+            Reaction5.color = Color.red;
         }
         else
         {
