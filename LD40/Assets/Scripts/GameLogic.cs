@@ -26,6 +26,9 @@ public class GameLogic : MonoBehaviour {
     public GameObject TweetGO;
     public GameObject VideoGO;
     public GameObject PostGO;
+    public Font scaryFont;
+    public GameObject RedEye;
+    public GameObject Redrum;
 
 
     [SerializeField]
@@ -37,6 +40,7 @@ public class GameLogic : MonoBehaviour {
     int newMoneyDelta = 50;
     int followersDelta;
     HashtagGenerator hGenerator;
+    bool scaryFontEnabled = false;
     
 
     private void Awake()
@@ -61,6 +65,11 @@ public class GameLogic : MonoBehaviour {
         {
             moodReactionCanvas.SetActive(false);
         }
+
+        if (gState.Health < 30)
+        {
+            scaryFontEnabled = true;
+        }
 	}
 
     IEnumerator TimeUpdate()
@@ -84,6 +93,11 @@ public class GameLogic : MonoBehaviour {
             {
                 hGenerator.waitTime = 1.0f;
             }
+            if(RedEye.activeSelf == true)
+            {
+                RedEye.SetActive(false);
+            }
+            
         } else if (gState.Followers >= 10000)
         {
             hGenerator.waitTime -= 0.2f;
@@ -91,7 +105,16 @@ public class GameLogic : MonoBehaviour {
             {
                 hGenerator.waitTime = 1.0f;
             }
-        } 
+            RedEye.SetActive(true);
+        } else if (gState.Followers >= 20000)
+        {
+            hGenerator.waitTime -= 0.2f;
+            if (hGenerator.waitTime < 1.0f)
+            {
+                hGenerator.waitTime = 1.0f;
+            }
+            Redrum.SetActive(true);
+        }
         
 
         if (TurnNumber < 10)
@@ -179,7 +202,25 @@ public class GameLogic : MonoBehaviour {
             gState.Followers += ((gState.Followers * 10) / 100) + 200;
         }
         thumbUpParticle.Play();
-        if (gState.Health < 50 || gState.Followers > 100000)
+        if (scaryFontEnabled == true)
+        {
+            Reaction1.text = VeryPossitivePhrases[Random.Range(0, 15)];
+            Reaction1.color = Color.red;
+            Reaction1.font = scaryFont;
+            Reaction2.text = VeryPossitivePhrases[Random.Range(0, 15)];
+            Reaction2.color = Color.red;
+            Reaction2.font = scaryFont;
+            Reaction3.text = VeryPossitivePhrases[Random.Range(0, 15)];
+            Reaction3.color = Color.red;
+            Reaction3.font = scaryFont;
+            Reaction4.text = VeryPossitivePhrases[Random.Range(0, 15)];
+            Reaction4.color = Color.red;
+            Reaction4.font = scaryFont;
+            Reaction5.text = VeryPossitivePhrases[Random.Range(0, 15)];
+            Reaction5.color = Color.red;
+            Reaction5.font = scaryFont;
+        }
+        else if (gState.Health < 50 || gState.Followers > 100000)
         {
             Reaction1.text = VeryPossitivePhrases[Random.Range(0, 15)];
             Reaction1.color = Color.red;
@@ -191,8 +232,8 @@ public class GameLogic : MonoBehaviour {
             Reaction4.color = Color.red;
             Reaction5.text = VeryPossitivePhrases[Random.Range(0, 15)];
             Reaction5.color = Color.red;
-        }
-        else
+            
+        } else
         {
             Reaction1.text = PossitivePhrases[Random.Range(0, 15)];
             Reaction2.text = PossitivePhrases[Random.Range(0, 15)];
@@ -222,8 +263,25 @@ public class GameLogic : MonoBehaviour {
         }
         
         thumbDownParticle.Play();
-        if (gState.Health < 50 || gState.Followers > 100000)
+        if (scaryFontEnabled == true)
         {
+            Reaction1.text = VeryNegativePhrases[Random.Range(0, 15)];
+            Reaction1.color = Color.red;
+            Reaction1.font = scaryFont;
+            Reaction2.text = VeryNegativePhrases[Random.Range(0, 15)];
+            Reaction2.color = Color.red;
+            Reaction2.font = scaryFont;
+            Reaction3.text = VeryNegativePhrases[Random.Range(0, 15)];
+            Reaction3.color = Color.red;
+            Reaction3.font = scaryFont;
+            Reaction4.text = VeryNegativePhrases[Random.Range(0, 15)];
+            Reaction4.color = Color.red;
+            Reaction4.font = scaryFont;
+            Reaction5.text = VeryNegativePhrases[Random.Range(0, 15)];
+            Reaction5.color = Color.red;
+            Reaction5.font = scaryFont;
+        }
+        else if (gState.Health < 50 || gState.Followers > 100000) {
             Reaction1.text = VeryNegativePhrases[Random.Range(0, 15)];
             Reaction1.color = Color.red;
             Reaction2.text = VeryNegativePhrases[Random.Range(0, 15)];
@@ -234,8 +292,8 @@ public class GameLogic : MonoBehaviour {
             Reaction4.color = Color.red;
             Reaction5.text = VeryNegativePhrases[Random.Range(0, 15)];
             Reaction5.color = Color.red;
-        }
-        else
+            
+        } else
         {
             Reaction1.text = NegativePhrases[Random.Range(0, 15)];
             Reaction2.text = NegativePhrases[Random.Range(0, 15)];

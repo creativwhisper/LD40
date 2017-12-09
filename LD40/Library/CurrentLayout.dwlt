@@ -40,8 +40,8 @@ MonoBehaviour:
     y: 431
     width: 851
     height: 204
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 342}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 27
+  controlID: 11
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 85
+  controlID: 137
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_MinSize: {x: 436, y: 492}
   m_MaxSize: {x: 14006, y: 14042}
   vertical: 0
-  controlID: 26
+  controlID: 10
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 25
+  controlID: 81
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -211,8 +211,8 @@ MonoBehaviour:
     y: 0
     width: 281
     height: 635
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -346,18 +346,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scenes
+    - Assets/Images
   m_ViewMode: 1
   m_StartGridSize: 53
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Images
   m_LastFoldersGridSize: 53
   m_LastProjectPath: C:\Users\creat\Documents\GameDev\Prototipos Unity\LD40\LD40
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 4e270000
-    m_LastClickedID: 10062
+    m_SelectedIDs: c0270000
+    m_LastClickedID: 10176
     m_ExpandedIDs: 000000003827000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -438,7 +438,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 119.41072}
     m_GridSize: 53
   m_DirectoriesAreaWidth: 110
 --- !u!114 &15
@@ -501,10 +501,10 @@ MonoBehaviour:
     width: 230
     height: 264
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 7c960000
-    m_LastClickedID: 38524
-    m_ExpandedIDs: b43ffbff8445fbff4846fbff6447fbff6a47fbff7c47fbff604dfbff264efbff424ffbff484ffbff5a4ffbff7456fbff3e57fbff5a58fbff6058fbff7258fbffac5dfbff785efbff965ffbff9c5ffbffae5ffbffbc73fbff8674fbffa475fbffaa75fbffbc75fbff5adaffff1edbffff3adcffff40dcffff52dcffffb0e4ffff74e5ffff90e6ffff96e6ffffa8e6ffffa0edffff60eeffff82efffff8cefffffa2efffff28f7ffffa0fbffff00000000203e0000b63e0000003f0000883f000084960000
+    scrollPos: {x: 0, y: 281}
+    m_SelectedIDs: 3e8ffcff
+    m_LastClickedID: -225474
+    m_ExpandedIDs: b6f8ffffa0fbffff0000000008290000e8290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -523,7 +523,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 6}
     m_SearchString: 
   m_ExpandedScenes:
-  - HowToPlay
+  - Main
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -554,14 +554,14 @@ MonoBehaviour:
     width: 849
     height: 410
   m_SceneLighting: 1
-  lastFramingTime: 4039.3933155560467
+  lastFramingTime: 2432.346057039363
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 3.2712264, y: -1.8114711, z: 2}
+    m_Target: {x: 1.1207428, y: -1.549015, z: -0.0036087641}
     speed: 2
-    m_Value: {x: 3.2712264, y: -1.8114711, z: 2}
+    m_Value: {x: 1.1207428, y: -1.549015, z: -0.0036087641}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -588,15 +588,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 13.62017
+    m_Target: 14.030335
     speed: 2
-    m_Value: 13.62017
+    m_Value: 14.030335
   m_Ortho:
     m_Target: 1
     speed: 2
     m_Value: 1
   m_ShowGlobalGrid: 1
-  m_LastSceneViewRotation: {x: 0.27496812, y: -0.11988412, z: 0.034578387, w: 0.953323}
+  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 

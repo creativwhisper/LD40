@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: f6967f22a6fec7a47b1ac629565b2e75
+timeCreated: 1512809638
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Horroroid
+  fontNames:
+  - Horroroid
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
